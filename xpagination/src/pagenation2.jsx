@@ -5,13 +5,18 @@ export default function Pagination2() {
     const [user, setUser] = useState([]);
     const [page, setpage] = useState(1);
     const getData = async () => {
-        const res = await fetch(
-            "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
-        );
-        const data = await res.json();
-        setUser(data);
+        try {
+            const res = await fetch(
+                "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
+            );
+            const data = await res.json();
+            setUser(data);
+        }
+        catch (error) {
+            console.log(error);
+        }
     };
-    console.log(user);
+
 
     useEffect(() => {
         getData();
