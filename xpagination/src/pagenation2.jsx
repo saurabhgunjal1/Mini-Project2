@@ -14,6 +14,7 @@ export default function Pagination2() {
         }
         catch (error) {
             console.log(error);
+            alert("Failed to fetch data. Please try again later.")
         }
     };
 
