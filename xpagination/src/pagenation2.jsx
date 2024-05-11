@@ -13,8 +13,9 @@ export default function Pagination2() {
             setUser(data);
         }
         catch (error) {
-            console.log(error);
-            alert("Failed to fetch data. Please try again later.")
+            alert("failed to fetch data")
+
+            console.error("failed to fetch data", error);
         }
     };
 
